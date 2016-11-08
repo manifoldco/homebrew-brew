@@ -29,12 +29,12 @@ class Torus < Formula
     ENV.prepend_path "PATH", buildpath/"bin"
 
     cd toruspath do
-      ENV.deparallelize { system "make" }
-
       arch = MacOS.prefer_64_bit? ? "amd64" : "386"
-      system "make", "binary-darwin-#{arch}"
+      ENV.deparallelize do
+        system "make", "binary-darwin-#{arch}", "VERSION=0.15.0"
+      end
 
-      bin.install "builds/bin/0.15.0/darwin/#{arch}/torus"
+      bin.install "builds/bin/VERSION/darwin/#{arch}/torus"
     end
   end
 end
