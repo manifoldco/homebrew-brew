@@ -136,9 +136,9 @@ end
     Language::Go.stage_deps resources, buildpath/"src"
 
     cd "src/github.com/jteeuwen/go-bindata" do
-      system "go", "build"
-      buildpath.install "go-bindata"
+      system "go", "install", "github.com/jteeuwen/go-bindata/..."
     end
+    ENV.prepend_path "PATH", buildpath/"bin"
 
     cd toruspath do
       ENV.deparallelize { system "make" }
