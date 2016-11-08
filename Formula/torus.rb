@@ -4,7 +4,7 @@ class Torus < Formula
   desc "A secure, shared workspace for secrets"
   homepage "https://www.torus.sh"
   url "https://github.com/manifoldco/torus-cli/archive/v0.15.0.tar.gz"
-  sha256 "b516791d6bb6611e07c5e8a663522ed06874ff4588831dfef04af1b879bee195"
+  sha256 "22934ae7bde84975d02cd13eb801d7a022f757e2855065de5075147aac3e671a"
   head "https://github.com/manifoldco/torus-cli.git"
 
   depends_on "go" => :build
