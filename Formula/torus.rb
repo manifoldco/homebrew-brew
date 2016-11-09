@@ -3,8 +3,8 @@ require "language/go"
 class Torus < Formula
   desc "A secure, shared workspace for secrets"
   homepage "https://www.torus.sh"
-  url "https://github.com/manifoldco/torus-cli/archive/v0.15.0.tar.gz"
-  sha256 "22934ae7bde84975d02cd13eb801d7a022f757e2855065de5075147aac3e671a"
+  url "https://github.com/manifoldco/torus-cli/archive/v0.16.0.tar.gz"
+  sha256 "cfebeb06f3ad71374d73d06380c21b26ac66497a73fd2dc8fb0f0756cae06b4e"
   head "https://github.com/manifoldco/torus-cli.git"
 
   depends_on "glide" => :build
@@ -19,7 +19,7 @@ class Torus < Formula
     ENV["GOPATH"] = buildpath
     ENV["GLIDE_HOME"] = buildpath/"glide_home"
 
-    toruspath = buildpath/"src/github.com/manifoldco/torus"
+    toruspath = buildpath/"src/github.com/manifoldco/torus-cli"
     toruspath.install Dir["*"]
     Language::Go.stage_deps resources, buildpath/"src"
 
@@ -31,10 +31,10 @@ class Torus < Formula
     cd toruspath do
       arch = MacOS.prefer_64_bit? ? "amd64" : "386"
       ENV.deparallelize do
-        system "make", "binary-darwin-#{arch}", "VERSION=0.15.0"
+        system "make", "binary-darwin-#{arch}", "VERSION=0.16.0", "BYPASS_GO_CHECK=yes"
       end
 
-      bin.install "builds/bin/VERSION/darwin/#{arch}/torus"
+      bin.install "builds/bin/0.16.0/darwin/#{arch}/torus"
     end
   end
 end
