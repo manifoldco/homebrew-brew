@@ -13,9 +13,9 @@ class Torus < Formula
   bottle do
     root_url "https://get.torus.sh/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "ba6451f34ca919b4bc234c8c96aa659ea6d9094e538733979fe2472fa91ca7e5" => :sierra
-    sha256 "ba6451f34ca919b4bc234c8c96aa659ea6d9094e538733979fe2472fa91ca7e5" => :el_capitan
-    sha256 "ba6451f34ca919b4bc234c8c96aa659ea6d9094e538733979fe2472fa91ca7e5" => :yosemite
+    sha256 "66b6d63ce3740375c98dec9bc128d023a88fb25ab4fd6f99e7e286d7f13f8bb0" => :sierra
+    sha256 "66b6d63ce3740375c98dec9bc128d023a88fb25ab4fd6f99e7e286d7f13f8bb0" => :el_capitan
+    sha256 "66b6d63ce3740375c98dec9bc128d023a88fb25ab4fd6f99e7e286d7f13f8bb0" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
