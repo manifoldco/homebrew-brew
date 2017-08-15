@@ -14,9 +14,9 @@ class ManifoldCli< Formula
   bottle do
     root_url "https://releases.manifold.co/manifold-cli/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "483f006f23586cdca73479a6657bdcf0ae7dbf94d1285eef81f1d8df357ac359" => :sierra
-      sha256 "483f006f23586cdca73479a6657bdcf0ae7dbf94d1285eef81f1d8df357ac359" => :el_capitan
-      sha256 "483f006f23586cdca73479a6657bdcf0ae7dbf94d1285eef81f1d8df357ac359" => :yosemite
+    sha256 "1696b261e978ba43411067d4789ec2a4c5c89fdedb154a9a9e844e23932e5fdc" => :sierra
+    sha256 "1696b261e978ba43411067d4789ec2a4c5c89fdedb154a9a9e844e23932e5fdc" => :el_capitan
+    sha256 "1696b261e978ba43411067d4789ec2a4c5c89fdedb154a9a9e844e23932e5fdc" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
