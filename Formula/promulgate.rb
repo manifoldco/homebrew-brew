@@ -14,9 +14,9 @@ class Promulgate< Formula
   bottle do
     root_url "https://releases.manifold.co/promulgate/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "d6842f462147c566d52b0517a302182d9e7883a0ee1a1ddcb39b17925afc6e42" => :sierra
-    sha256 "d6842f462147c566d52b0517a302182d9e7883a0ee1a1ddcb39b17925afc6e42" => :el_capitan
-    sha256 "d6842f462147c566d52b0517a302182d9e7883a0ee1a1ddcb39b17925afc6e42" => :yosemite
+    sha256 "dbcc8ad73b52bba31fef57d2543ec2509d5d3a055da5fb07d41de902932e365e" => :sierra
+    sha256 "dbcc8ad73b52bba31fef57d2543ec2509d5d3a055da5fb07d41de902932e365e" => :el_capitan
+    sha256 "dbcc8ad73b52bba31fef57d2543ec2509d5d3a055da5fb07d41de902932e365e" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
