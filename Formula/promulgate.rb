@@ -4,7 +4,7 @@ require "language/go"
 class Promulgate< Formula
   desc "Manifold's release tool"
   homepage "https://www.manifold.co"
-  url "https://github.com/manifoldco/promulgate/archive/v0.0.4.tar.gz"
+  url "https://github.com/manifoldco/promulgate/archive/v0.0.5.tar.gz"
   sha256 ""
   head "https://github.com/manifoldco/promulgate.git"
 
@@ -14,9 +14,9 @@ class Promulgate< Formula
   bottle do
     root_url "https://releases.manifold.co/promulgate/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "019ab2502ebccb5eccc95be161a7dca0944eeb72820a79314cc7ac5b6ac26019" => :sierra
-    sha256 "019ab2502ebccb5eccc95be161a7dca0944eeb72820a79314cc7ac5b6ac26019" => :el_capitan
-    sha256 "019ab2502ebccb5eccc95be161a7dca0944eeb72820a79314cc7ac5b6ac26019" => :yosemite
+    sha256 "d6842f462147c566d52b0517a302182d9e7883a0ee1a1ddcb39b17925afc6e42" => :sierra
+    sha256 "d6842f462147c566d52b0517a302182d9e7883a0ee1a1ddcb39b17925afc6e42" => :el_capitan
+    sha256 "d6842f462147c566d52b0517a302182d9e7883a0ee1a1ddcb39b17925afc6e42" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
@@ -40,10 +40,10 @@ class Promulgate< Formula
     cd pkgpath do
       arch = MacOS.prefer_64_bit? ? "amd64" : "386"
       ENV.deparallelize do
-        system "make", "binary-darwin-#{arch}", "VERSION=v0.0.4", "BYPASS_GO_CHECK=yes"
+        system "make", "binary-darwin-#{arch}", "VERSION=v0.0.5", "BYPASS_GO_CHECK=yes"
       end
 
-      bin.install "builds/bin/v0.0.4/darwin/#{arch}/promulgate"
+      bin.install "builds/bin/v0.0.5/darwin/#{arch}/promulgate"
     end
   end
 end
