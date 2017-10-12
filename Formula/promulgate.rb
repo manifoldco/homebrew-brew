@@ -4,7 +4,7 @@ require "language/go"
 class Promulgate< Formula
   desc "Manifold's release tool"
   homepage "https://www.manifold.co"
-  url "https://github.com/manifoldco/promulgate/archive/v0.0.7.tar.gz"
+  url "https://github.com/manifoldco/promulgate/archive/v0.0.8.tar.gz"
   sha256 ""
   head "https://github.com/manifoldco/promulgate.git"
 
@@ -14,10 +14,10 @@ class Promulgate< Formula
   bottle do
     root_url "https://releases.manifold.co/promulgate/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "59f8ad94c36a11282cbf9d7328209e7f21104f171efdf526d63fcab6e878cbb2" => :high_sierra
-    sha256 "59f8ad94c36a11282cbf9d7328209e7f21104f171efdf526d63fcab6e878cbb2" => :sierra
-    sha256 "59f8ad94c36a11282cbf9d7328209e7f21104f171efdf526d63fcab6e878cbb2" => :el_capitan
-    sha256 "59f8ad94c36a11282cbf9d7328209e7f21104f171efdf526d63fcab6e878cbb2" => :yosemite
+    sha256 "db2dac7b62ed04a98555c88a3dacd5b7a315e80a2fef86821bc1f4bb3b172674" => :high_sierra
+    sha256 "db2dac7b62ed04a98555c88a3dacd5b7a315e80a2fef86821bc1f4bb3b172674" => :sierra
+    sha256 "db2dac7b62ed04a98555c88a3dacd5b7a315e80a2fef86821bc1f4bb3b172674" => :el_capitan
+    sha256 "db2dac7b62ed04a98555c88a3dacd5b7a315e80a2fef86821bc1f4bb3b172674" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
@@ -41,10 +41,10 @@ class Promulgate< Formula
     cd pkgpath do
       arch = MacOS.prefer_64_bit? ? "amd64" : "386"
       ENV.deparallelize do
-        system "make", "binary-darwin-#{arch}", "VERSION=v0.0.7", "BYPASS_GO_CHECK=yes"
+        system "make", "binary-darwin-#{arch}", "VERSION=v0.0.8", "BYPASS_GO_CHECK=yes"
       end
 
-      bin.install "builds/bin/v0.0.7/darwin/#{arch}/promulgate"
+      bin.install "builds/bin/v0.0.8/darwin/#{arch}/promulgate"
     end
   end
 end
