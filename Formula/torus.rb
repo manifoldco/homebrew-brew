@@ -3,10 +3,9 @@ require "language/go"
 class Torus < Formula
   desc "A secure, shared workspace for secrets"
   homepage "https://www.torus.sh"
-  url "https://github.com/manifoldco/torus-cli/archive/v0.25.0.tar.gz"
-  sha256 "a2c1f825f98c901afedd671b8ee9eda747c55d3d7f6f23d1f378556fa4476455"
+  url "https://github.com/manifoldco/torus-cli/archive/v0.25.1.tar.gz"
+  sha256 "768a4b2e101c1190c52276784638e004cde52054514af0a03797bcf65eeb28c0"
   head "https://github.com/manifoldco/torus-cli.git"
-  getting_started_url "https://www.torus.sh/docs/latest/start-here/quickstart"
 
   depends_on "glide" => :build
   depends_on "go" => :build
@@ -14,10 +13,10 @@ class Torus < Formula
   bottle do
     root_url "https://get.torus.sh/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "08ab3bb2ee351f9172c550c7e2f4af9d67eb5231902e67d083b12bb2af1b0361" => :high_sierra
-    sha256 "08ab3bb2ee351f9172c550c7e2f4af9d67eb5231902e67d083b12bb2af1b0361" => :sierra
-    sha256 "08ab3bb2ee351f9172c550c7e2f4af9d67eb5231902e67d083b12bb2af1b0361" => :el_capitan
-    sha256 "08ab3bb2ee351f9172c550c7e2f4af9d67eb5231902e67d083b12bb2af1b0361" => :yosemite
+    sha256 "4f59d367c8fe0a9398c6b672050312b8125a538cf68e595ecfd52bb26304c5e2" => :high_sierra
+    sha256 "4f59d367c8fe0a9398c6b672050312b8125a538cf68e595ecfd52bb26304c5e2" => :sierra
+    sha256 "4f59d367c8fe0a9398c6b672050312b8125a538cf68e595ecfd52bb26304c5e2" => :el_capitan
+    sha256 "4f59d367c8fe0a9398c6b672050312b8125a538cf68e595ecfd52bb26304c5e2" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
@@ -41,12 +40,13 @@ class Torus < Formula
     cd toruspath do
       arch = MacOS.prefer_64_bit? ? "amd64" : "386"
       ENV.deparallelize do
-        system "make", "binary-darwin-#{arch}", "VERSION=0.25.0", "BYPASS_GO_CHECK=yes"
+        system "make", "binary-darwin-#{arch}", "VERSION=0.25.1", "BYPASS_GO_CHECK=yes"
       end
 
-      bin.install "builds/bin/0.25.0/darwin/#{arch}/torus"
+      bin.install "builds/bin/0.25.1/darwin/#{arch}/torus"
     end
 
+    getting_started_url = "https://www.torus.sh/docs/latest/start-here/quickstart"
     ohai "Learn how to get started with Torus at #{getting_started_url}!"
   end
 end
