@@ -3,8 +3,8 @@ require "language/go"
 class Torus < Formula
   desc "A secure, shared workspace for secrets"
   homepage "https://www.torus.sh"
-  url "https://github.com/manifoldco/torus-cli/archive/v0.29.0.tar.gz"
-  sha256 "395408a3dc9c3db2b5c200b8722a13a60898c861633b99e6e250186adffd1370"
+  url "https://github.com/manifoldco/torus-cli/archive/v0.30.0.tar.gz"
+  sha256 "ac01bf2dbf8672fea7dab9a0895ad749462e993ba1fc999f0243f0054ee562ab"
   head "https://github.com/manifoldco/torus-cli.git"
 
   depends_on "glide" => :build
@@ -13,10 +13,10 @@ class Torus < Formula
   bottle do
     root_url "https://get.torus.sh/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "db5df7a77812a7d512f7bebc17491fb3ba6adfe86f6feeeecce4d76eb892ef08" => :high_sierra
-    sha256 "db5df7a77812a7d512f7bebc17491fb3ba6adfe86f6feeeecce4d76eb892ef08" => :sierra
-    sha256 "db5df7a77812a7d512f7bebc17491fb3ba6adfe86f6feeeecce4d76eb892ef08" => :el_capitan
-    sha256 "db5df7a77812a7d512f7bebc17491fb3ba6adfe86f6feeeecce4d76eb892ef08" => :yosemite
+    sha256 "69f7c3f1f8223a95e1fe6e746c69ab672eef40a0b640e1e590bc6d9e8530fe72" => :high_sierra
+    sha256 "69f7c3f1f8223a95e1fe6e746c69ab672eef40a0b640e1e590bc6d9e8530fe72" => :sierra
+    sha256 "69f7c3f1f8223a95e1fe6e746c69ab672eef40a0b640e1e590bc6d9e8530fe72" => :el_capitan
+    sha256 "69f7c3f1f8223a95e1fe6e746c69ab672eef40a0b640e1e590bc6d9e8530fe72" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
@@ -40,10 +40,10 @@ class Torus < Formula
     cd toruspath do
       arch = MacOS.prefer_64_bit? ? "amd64" : "386"
       ENV.deparallelize do
-        system "make", "binary-darwin-#{arch}", "VERSION=0.29.0", "BYPASS_GO_CHECK=yes"
+        system "make", "binary-darwin-#{arch}", "VERSION=0.30.0", "BYPASS_GO_CHECK=yes"
       end
 
-      bin.install "builds/bin/0.29.0/darwin/#{arch}/torus"
+      bin.install "builds/bin/0.30.0/darwin/#{arch}/torus"
     end
 
     getting_started_url = "https://www.torus.sh/docs/latest/start-here/quickstart"
