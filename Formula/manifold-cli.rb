@@ -4,7 +4,7 @@ require "language/go"
 class ManifoldCli< Formula
   desc "Manage your services and config from the command line"
   homepage "https://www.manifold.co/cli"
-  url "https://github.com/manifoldco/manifold-cli/archive/v0.15.0.tar.gz"
+  url "https://github.com/manifoldco/manifold-cli/archive/v0.15.1.tar.gz"
   sha256 ""
   head "https://github.com/manifoldco/manifold-cli.git"
 
@@ -14,10 +14,10 @@ class ManifoldCli< Formula
   bottle do
     root_url "https://releases.manifold.co/manifold-cli/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "5ddf001817811e466582580386c84ab1eaf409b03d912ddd3db7b8a62b321765" => :high_sierra
-    sha256 "5ddf001817811e466582580386c84ab1eaf409b03d912ddd3db7b8a62b321765" => :sierra
-    sha256 "5ddf001817811e466582580386c84ab1eaf409b03d912ddd3db7b8a62b321765" => :el_capitan
-    sha256 "5ddf001817811e466582580386c84ab1eaf409b03d912ddd3db7b8a62b321765" => :yosemite
+    sha256 "48aeb25a4ef81b2e48ac970984815e79ebfdc99183ec09dc9a5dd91d68348f30" => :high_sierra
+    sha256 "48aeb25a4ef81b2e48ac970984815e79ebfdc99183ec09dc9a5dd91d68348f30" => :sierra
+    sha256 "48aeb25a4ef81b2e48ac970984815e79ebfdc99183ec09dc9a5dd91d68348f30" => :el_capitan
+    sha256 "48aeb25a4ef81b2e48ac970984815e79ebfdc99183ec09dc9a5dd91d68348f30" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
@@ -41,10 +41,10 @@ class ManifoldCli< Formula
     cd pkgpath do
       arch = MacOS.prefer_64_bit? ? "amd64" : "386"
       ENV.deparallelize do
-        system "make", "binary-darwin-#{arch}", "VERSION=v0.15.0", "BYPASS_GO_CHECK=yes"
+        system "make", "binary-darwin-#{arch}", "VERSION=v0.15.1", "BYPASS_GO_CHECK=yes"
       end
 
-      bin.install "builds/bin/v0.15.0/darwin/#{arch}/manifold"
+      bin.install "builds/bin/v0.15.1/darwin/#{arch}/manifold"
     end
   end
 end
