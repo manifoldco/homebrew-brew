@@ -14,10 +14,10 @@ class Grafton< Formula
   bottle do
     root_url "https://releases.manifold.co/grafton/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "9bfc57d61e6653998f700d5e18ff6c4578da4208b6d1b252efe0be102a74bafd" => :high_sierra
-    sha256 "9bfc57d61e6653998f700d5e18ff6c4578da4208b6d1b252efe0be102a74bafd" => :sierra
-    sha256 "9bfc57d61e6653998f700d5e18ff6c4578da4208b6d1b252efe0be102a74bafd" => :el_capitan
-    sha256 "9bfc57d61e6653998f700d5e18ff6c4578da4208b6d1b252efe0be102a74bafd" => :yosemite
+    sha256 "7a9e71e00528fc2e8c8403877d5514615479d110c7e477efe621e69f6be0d5e3" => :high_sierra
+    sha256 "7a9e71e00528fc2e8c8403877d5514615479d110c7e477efe621e69f6be0d5e3" => :sierra
+    sha256 "7a9e71e00528fc2e8c8403877d5514615479d110c7e477efe621e69f6be0d5e3" => :el_capitan
+    sha256 "7a9e71e00528fc2e8c8403877d5514615479d110c7e477efe621e69f6be0d5e3" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
