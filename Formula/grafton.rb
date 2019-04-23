@@ -4,7 +4,7 @@ require "language/go"
 class Grafton< Formula
   desc "Manifold's provider validation tool"
   homepage "<https://docs.manifold.co>"
-  url "https://github.com/manifoldco/grafton/archive/v0.14.5.tar.gz"
+  url "https://github.com/manifoldco/grafton/archive/v0.15.0.tar.gz"
   sha256 ""
   head "https://github.com/manifoldco/grafton.git"
 
@@ -14,10 +14,10 @@ class Grafton< Formula
   bottle do
     root_url "https://releases.manifold.co/grafton/brew/bottles"
     cellar :any_skip_relocation
-    sha256 "747341aa69878abe8d46b6bf5a998ba36aa69358200d028bb65090e9aa0f8eef" => :high_sierra
-    sha256 "747341aa69878abe8d46b6bf5a998ba36aa69358200d028bb65090e9aa0f8eef" => :sierra
-    sha256 "747341aa69878abe8d46b6bf5a998ba36aa69358200d028bb65090e9aa0f8eef" => :el_capitan
-    sha256 "747341aa69878abe8d46b6bf5a998ba36aa69358200d028bb65090e9aa0f8eef" => :yosemite
+    sha256 "8450a1f244c93e94bf183893abc86bc57be8e9bf6fe16087cb576e343abd2b31" => :high_sierra
+    sha256 "8450a1f244c93e94bf183893abc86bc57be8e9bf6fe16087cb576e343abd2b31" => :sierra
+    sha256 "8450a1f244c93e94bf183893abc86bc57be8e9bf6fe16087cb576e343abd2b31" => :el_capitan
+    sha256 "8450a1f244c93e94bf183893abc86bc57be8e9bf6fe16087cb576e343abd2b31" => :yosemite
   end
 
   go_resource "github.com/jteeuwen/go-bindata" do
@@ -41,10 +41,10 @@ class Grafton< Formula
     cd pkgpath do
       arch = MacOS.prefer_64_bit? ? "amd64" : "386"
       ENV.deparallelize do
-        system "make", "binary-darwin-#{arch}", "VERSION=v0.14.5", "BYPASS_GO_CHECK=yes"
+        system "make", "binary-darwin-#{arch}", "VERSION=v0.15.0", "BYPASS_GO_CHECK=yes"
       end
 
-      bin.install "builds/bin/v0.14.5/darwin/#{arch}/grafton"
+      bin.install "builds/bin/v0.15.0/darwin/#{arch}/grafton"
     end
   end
 end
